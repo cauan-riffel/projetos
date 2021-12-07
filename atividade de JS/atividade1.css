@@ -1,0 +1,25 @@
+#nome{
+    margin-left: 100px;
+}
+
+
+#anos{
+    margin-left: 59px;
+}
+
+
+#mes{
+    margin-left: 51px;
+}
+
+
+#dia{
+    margin-left: 62px;
+}
+
+
+#containerR{
+    width: 100%;
+    height: 40px;
+    background-color: lightcyan;
+}

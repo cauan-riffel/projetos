@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="atividade1.css">
+        <script src="atividade1.JS"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>digite sua idade</h1>
+        <p>use o cáululos abaixo</p>
+        <figure>
+            <img src="img1.png">
+            <figcaption>
+                são respectivamente os cálculos dos anos, meses e dias de vida (a data em que essa imagem foi adicionada é 07/12/2021)
+            </figcaption>
+        </figure>
+        <p>caso o mês ou dia der um número negativo use o exemplo abaixo</p>
+        <figure>
+            <img src="img2.png">
+            <figcaption>
+                são respectivamente mes e dia (a data em que essa imagem foi adicionada é 07/12/2021)
+            </figcaption>
+        </figure>
+        <label for="nome">
+            digite seu nome:
+        </label>
+        <input type="text" placeholder="digite aqui seu nome" name="nome" id="nome"><br>
+        <label for="anos">
+            digite seus anos de vida: 
+        </label>
+        <input type="number" placeholder="15" name="anos" id="anos"><br>
+        <label for="mes">
+            digite seus meses de vida: 
+        </label>
+        <input type="number" placeholder="10" name="anos" id="mes"><br>
+        <label for="dia">
+            digite seus dias de vida: 
+        </label>
+        <input type="number" placeholder="21" name="dia" id="dia">
+        <input type="button" value="↵" onclick="diasDVida()">
+        <div id="containerR">
+            <p id="mostrar"></p>
+        </div>
+    </body>
+</html>
