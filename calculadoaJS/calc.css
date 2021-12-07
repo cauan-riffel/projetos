@@ -1,0 +1,137 @@
+body{
+    padding: 0px;
+}
+
+
+#calculadora{
+    border: 2px solid;
+    height: 170px;
+    width: 120px;
+    background-color: whitesmoke;
+}
+
+
+#um{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#dois{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#tres{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#quatro {
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#cinco{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#seis{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#sete{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#oito{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#nove{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#zero{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#ponto{
+    padding: 3px 6px;
+    background-color: blue;
+    margin: 1px;
+}
+
+
+#menos{
+    padding: 3px 6px;
+    background-color: gray;
+    margin: 1px;
+}
+
+
+#mais{
+    padding: 3px 6px;
+    background-color: gray;
+    margin: 1px;
+}
+
+
+#vezes{
+    padding: 3px 6px;
+    background-color: gray;
+    margin: 1px;
+}
+
+
+#divd{
+    padding: 3px 6px;
+    background-color: gray;
+    margin: 1px;
+}
+
+
+#calc{
+    padding: 3px 6px;
+    background-color: gray;
+    margin: 1px;
+}
+
+
+#resposta{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+}
+
+#clear{
+    width: 100%;
+    background-color: red;
+}
