@@ -11,23 +11,28 @@
     <body>
         <div id="calculadora">
             <p id="resposta"></p>
-            <input type="button" id="um" value="1" onclick="ad1()">
-            <input type="button" id="dois" value="2" onclick="ad2()">
-            <input type="button" id="tres" value="3" onclick="ad3()">
-            <input type="button" id="divd" value="/" onclick="divd()"><br>
-            <input type="button" id="quatro" value="4" onclick="ad4()">
-            <input type="button" id="cinco" value="5" onclick="ad5()">
-            <input type="button" id="seis" value="6" onclick="ad6()">
-            <input type="button" id="vezes" value="*" onclick="vezes()"><br>
-            <input type="button" id="sete" value="7" onclick="ad7()">
-            <input type="button" id="oito" value="8" onclick="ad8()">
-            <input type="button" id="nove" value="9" onclick="ad9()">
-            <input type="button" id="menos" value="-" onclick="menos()"><br>
-            <input type="button" id="zero" value="0" onclick="ad0()">
-            <input type="button" id="ponto" value="," onclick="ponto()">
-            <input type="button" id="calc" value="↵" onclick="calc()">
-            <input type="button" id="mais" value="+" onclick="mais()">
-            <input type="button" id="clear" value="Clear" onclick="limpar()">
+            <input type="button" id="clear" value="AC" onclick="limpar()">
+            <input type="button" id="operador" value="**" onclick="calc(' ** ')">
+            <input type="button" id="operador" value="√" onclick="calc(' ** 0.5')">
+            <input type="button" id="operador" value="/" onclick="calc(' / ')">
+            <input type="button" id="operador" value="3,6/" onclick="calc(' / 3.6')"><br>
+            <input type="button" id="num" value="7" onclick="calc('7')">
+            <input type="button" id="num" value="8" onclick="calc('8')">
+            <input type="button" id="num" value="9" onclick="calc('9')">
+            <input type="button" id="operador" value="*" onclick="calc(' * ')">
+            <input type="button" id="operador" value="3,6*" onclick="calc(' * 3.6')"><br>
+            <input type="button" id="num" value="4" onclick="calc('4')">
+            <input type="button" id="num" value="5" onclick="calc('5')">
+            <input type="button" id="num" value="6" onclick="calc('6')">
+            <input type="button" id="operador" value="-" onclick="calc(' - ')"><br>
+            <input type="button" id="num" value="1" onclick="calc('1')">
+            <input type="button" id="num" value="2" onclick="calc('2')">
+            <input type="button" id="num" value="3" onclick="calc('3')">
+            <input type="button" id="operador" value="+" onclick="calc(' + ')"><br>
+            <input type="button" id="num" value="0" onclick="calc('0')">
+            <input type="button" id="operador" value="," onclick="calc('.')">
+            <input type="button" id="num" value="00" onclick="calc('00')">
+            <input type="button" id="calc" value="↵" onclick="calc('=')">
         </div>
     </body>
 </html>

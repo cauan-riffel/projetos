@@ -4,134 +4,57 @@ body{
 
 
 #calculadora{
-    border: 2px solid;
-    height: 170px;
-    width: 120px;
-    background-color: whitesmoke;
+    border: solid 1px black;
+    border-radius: 8px;
+    height: 135px;
+    width: 160px;
+    background-color: rgb(150, 150, 150);
+    padding: 2px 0px 0px 2px;
 }
 
 
-#um{
-    padding: 3px 6px;
+#num{
     background-color: blue;
-    margin: 1px;
+    width: 28px;
+    height: 18px;
+    padding: 0px;
+    margin-top: 1px;
 }
 
 
-#dois{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#tres{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#quatro {
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#cinco{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#seis{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#sete{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#oito{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#nove{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#zero{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#ponto{
-    padding: 3px 6px;
-    background-color: blue;
-    margin: 1px;
-}
-
-
-#menos{
-    padding: 3px 6px;
+#operador{
     background-color: gray;
-    margin: 1px;
+    margin-top: 1px;
+    width: 28px;
+    height: 18px;
+    padding: 0px;
 }
-
-
-#mais{
-    padding: 3px 6px;
-    background-color: gray;
-    margin: 1px;
-}
-
-
-#vezes{
-    padding: 3px 6px;
-    background-color: gray;
-    margin: 1px;
-}
-
-
-#divd{
-    padding: 3px 6px;
-    background-color: gray;
-    margin: 1px;
-}
-
 
 #calc{
-    padding: 3px 6px;
     background-color: gray;
-    margin: 1px;
+    margin-top: 1px;
+    width: 60px;
+    height: 18px;
+    padding: 0px;
 }
 
-
 #resposta{
-    width: 100%;
-    height: 30px;
+    border-radius: 8px;
+    width: 150px;
+    height: 25px;
+    padding: 2px 3px;
     background-color: black;
     color: whitesmoke;
-    margin: 0;
+    margin: 2px 0 4px 0.5px;
+    border: solid .5px grey;
 }
 
 #clear{
-    width: 100%;
     background-color: red;
+    margin-top: 1px;
+    width: 28px;
+    height: 18px;
+    padding: 0px;
 }
+
+
