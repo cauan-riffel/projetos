@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jogoDaVelha.css">
+        <title>jogo da velha</title>
+    </head>
+    <body>
+        <p id="vez"></p>
+        <div id="tabuleiro">
+            <div id="celap">
+                <img src="img/preto.png" id="cela1" onclick="casa('1')">
+            </div>
+            <div id="celac">
+                <img src="img/cinza.png" id="cela2" onclick="casa('2')">
+            </div>
+            <div id="celap">
+                <img src="img/preto.png" id="cela3" onclick="casa('3')">
+            </div>
+            <br>
+            <div id="celac">
+                <img src="img/cinza.png" id="cela4" onclick="casa('4')">
+            </div>
+            <div id="celap">
+                <img src="img/preto.png" id="cela5" onclick="casa('5')">
+            </div>
+            <div id="celac">
+                <img src="img/cinza.png" id="cela6" onclick="casa('6')">
+            </div>
+            <br>
+            <div id="celap">
+                <img src="img/preto.png" id="cela7" onclick="casa('7')">
+            </div>
+            <div id="celac">
+                <img src="img/cinza.png" id="cela8" onclick="casa('8')">
+            </div>
+            <div id="celap">
+                <img src="img/preto.png" id="cela9" onclick="casa('9')">
+            </div>
+        </div>
+        <div id="placar1">
+            <h1 id="nomeJogador1"></h1>
+            <p id="pontuacao1"></p>
+        </div>
+        <div id="placar2">
+            <h1 id="nomeJogador2"></h1>
+            <p id="pontuacao2"></p>
+        </div>
+        <p id="erro"></p>
+        <script src="jogoDaVelha.js" onload="mostrarTudo()"></script>
+    </body>
+</html>
