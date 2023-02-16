@@ -15,7 +15,7 @@ void main() {
     if (ganhador) {
       break;
     }
-    play(tabuleiro, 'Y');
+    play(tabuleiro, 'O');
     ganhador = verificar(tabuleiro);
   }
 }
