@@ -1,3 +1,3 @@
-#Faça um Programa que mostre a mensagem "Alô mundo" na tela.
+#Faça um Programa que mostre a mensagem "Ol" na tela.
 
 print('hello world')
