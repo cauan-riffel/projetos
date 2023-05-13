@@ -30,7 +30,7 @@ class Personagem:
 
 abrir inventário
 vender itens
-comprari itens - tá incluido aqui caralho
+comprari itens
 inimigos
 regiões #!protótipo de mapa
 
