@@ -5,7 +5,7 @@ weapon_names=('adaga','espada de mão','espadão','arco curvo','arco longo','mos
 
 class Weapon:
   def __init__(self,name:str,damage:float,accuracy:int) -> None:
-    self.name=accuracy
+    self.name=name
     self.damage=damage
     self.accuracy=accuracy
 
@@ -15,16 +15,19 @@ class Weapon:
     else:
       return 0
 
-def create_weapon(nome:str)->Weapon:
-  if nome=='adaga':
-    return Weapon(nome,66,910)
-  elif nome=='epada de mão':
-    return Weapon(nome,66,910)
-  elif nome=='espadão':
-    return Weapon(nome,66,910)
-  elif nome=='arco curvo':
-    return Weapon(nome,66,910)
-  elif nome=='arco longo':
-    return Weapon(nome,66,910)
+  def show_description(self):
+    print('%s:{dano:%.2f, precisão:%.2f}'%(self.name, self.damage, self.accuracy/10))
+
+def create_weapon(name:str)->Weapon:
+  if name=='adaga':
+    return Weapon(name,66,910)
+  elif name=='espada de mão':
+    return Weapon(name,66,700)
+  elif name=='espadão':
+    return Weapon(name,66,410)
+  elif name=='arco curvo':
+    return Weapon(name,66,300)
+  elif name=='arco longo':
+    return Weapon(name,66,430)
   else:
-    return Weapon(nome,66,910)
+    return Weapon(name,66,230)
