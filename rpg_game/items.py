@@ -11,6 +11,8 @@ class Weapon:
 
   def attack(self)->float:
     if random.randint(0,1000)<=self.accuracy:
+      if self.name=='mosquete':
+        print('bang')
       return self.damage
     else:
       return 0
