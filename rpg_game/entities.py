@@ -52,14 +52,14 @@ class Enemy:
 
 def create_enemy(name:str)->Enemy:
   if name=='mercenario':
-    return Enemy(name,50, create_weapon('adaga'), 'Este mercenário esta disposto a tudo para pilhar aqueles no seu caminho')
+    return Enemy(name,50,create_weapon('adaga'),'Este mercenário esta disposto a tudo para pilhar aqueles no seu caminho com sua adaga')
   elif name=='esqueleto':
-    return Enemy(name,50, create_weapon('espada de mão'), 'Um esqueleto humano sedento por carne de humanos')
+    return Enemy(name,50,create_weapon('espada de mão'),'Um esqueleto humano sedento por carne de humanos que quando você menos espera, ataca você com sua espada de mão')
   elif name=='ogro':
-    return Enemy(name,50, create_weapon('espadão'), 'Um ser que usa de força bruta que utiliza ')
+    return Enemy(name,50,create_weapon('espadão'),'Um ser que usa de força bruta que utiliza um grande espadão')
   elif name=='elfo':
-    return Enemy(name,50, create_weapon('arco curvo'), 'Um elfo arqueiro que usa apenas de sua habilidade para matar aqueles a sua volta')
+    return Enemy(name,50,create_weapon('arco curvo'),'Um elfo arqueiro que usa apenas de sua habilidade para matar aqueles a sua volta utilizando um arco curvo')
   elif name=='mago':
-    return Enemy(name,50, create_weapon('arco longo'), 'Um mago arqueiro que mata todos aqueles em seu caminho utilizando flechas encantadas')
+    return Enemy(name,50,create_weapon('arco longo'),'Um mago arqueiro que mata todos aqueles em seu caminho utilizando flechas encantadas ')
   else:
-    return Enemy(name,50, create_weapon('mosquete'),'um carecão lindo pelado com o mosquetão de fora vindo te pegar' )
+    return Enemy(name,50,create_weapon('mosquete'),'um carecão lindo pelado com o mosquetão de fora vindo te pegar')
