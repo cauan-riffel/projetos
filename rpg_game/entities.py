@@ -35,3 +35,31 @@ inimigos
 regiões #!protótipo de mapa
 
 '''
+
+
+enemy_names=('mercenario','esqueleto','elfo','mago','ogro','Mazzutti')
+
+class Enemy:
+	def _innit_(self, name:str, life:int, equipment:Weapon, description:str) -> None:
+		self.name = name
+		self.life = life
+		self.equipment = equipment 
+		self.description = description
+        
+	def attack(self):
+		return self.equipment.attack()    
+
+
+def create_enemy(name:str)->Enemy:
+  if name=='mercenario':
+    return Enemy(name,50, create_weapon('adaga'), 'Este mercenário esta disposto a tudo para pilhar aqueles no seu caminho')
+  elif name=='esqueleto':
+    return Enemy(name,50, create_weapon('espada de mão'), 'Um esqueleto humano sedento por carne de humanos')
+  elif name=='ogro':
+    return Enemy(name,50, create_weapon('espadão'), 'Um ser que usa de força bruta que utiliza ')
+  elif name=='elfo':
+    return Enemy(name,50, create_weapon('arco curvo'), 'Um elfo arqueiro que usa apenas de sua habilidade para matar aqueles a sua volta')
+  elif name=='mago':
+    return Enemy(name,50, create_weapon('arco longo'), 'Um mago arqueiro que mata todos aqueles em seu caminho utilizando flechas encantadas')
+  else:
+    return Enemy(name,50, create_weapon('mosquete'),'um carecão lindo pelado com o mosquetão de fora vindo te pegar' )
