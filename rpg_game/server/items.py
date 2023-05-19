@@ -31,6 +31,18 @@ class Adaga(Weapon):
     else:
       return 0
 
+    
+    
+class Mosquete(Weapon):
+  def __init__(self, name: str, damage: float, accuracy: int) -> None:
+    super().__init__('mosquete',400,230)
+
+  def attack(self)->float:
+    if random.randint(0,1000)<=self.accuracy:
+      print('bang')
+      return self.damage
+    else:
+      return 0
 
 def create_weapon(name:str)->Weapon:
   if name=='adaga':
