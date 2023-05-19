@@ -98,3 +98,17 @@ class Rotational_forge(Game_map):
 class Short_sighted_cave(Game_map):
   def __init__(self)->None:
     super().__init__('caverna de visão curta','Esta caverna, relativamente avermelhada, possui em suas paredes escrituras muito antigas, porém, com muito esforço você consegue decifrar alguns caracteres  formando a seguinte mensagem: "todos os aqui presentes devem ab#icar dos bens mortais, e div&%i-los, dei@#ndo de la@o a gan$&!ia e a part!r de hoje de$em se t$%nar bol#*eviq!es usufruidores dos pr!dut@s da abençoada ma#ã"',3,3,(("Forja Rotacional")))
+
+def move_possibilitys(obj:Game_map)->tuple[tuple[int,int]]:
+  if obj.path==1 and obj.step!=0:
+    return ((obj.step+1,obj.path))
+  elif obj.path==1:
+    return ((obj.step+1,obj.path),(obj.step+1,obj.path+1))
+  elif obj.step==2:
+    return ((obj.step+1,obj.path),(obj.step+1,obj.path+1))
+  elif obj.path==3 or obj.step==4:
+    return ((obj.step+1,obj.path-1))
+  else:
+    return ((obj.step+1,obj.path))
+  
+
