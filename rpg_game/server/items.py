@@ -20,6 +20,18 @@ class Weapon:
   def show_description(self)->None:
     return '%s:{dano:%.2f, precisão:%.1f}'%(self.name, self.damage, self.accuracy/10)
 
+
+class Adaga(Weapon):
+  def __init__(self, name: str, damage: float, accuracy: int) -> None:
+    super().__init__('adaga',45,910)
+
+  def attack(self)->float:
+    if random.randint(0,1000)<=self.accuracy:
+      return self.damage
+    else:
+      return 0
+
+
 def create_weapon(name:str)->Weapon:
   if name=='adaga':
     return Weapon(name,45,910)
