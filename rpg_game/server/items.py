@@ -9,14 +9,6 @@ class Weapon:
     self.damage=damage
     self.accuracy=accuracy
 
-  def attack(self)->float:
-    if random.randint(0,1000)<=self.accuracy:
-      if self.name=='mosquete':
-        print('bang')
-      return self.damage
-    else:
-      return 0
-
   def show_description(self)->None:
     return '%s:{dano:%.2f, precisão:%.1f}'%(self.name, self.damage, self.accuracy/10)
 
@@ -39,7 +31,6 @@ class Mosquete(Weapon):
 
   def attack(self)->float:
     if random.randint(0,1000)<=self.accuracy:
-      print('bang')
       return self.damage
     else:
       return 0
