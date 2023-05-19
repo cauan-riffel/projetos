@@ -34,7 +34,14 @@ class Enemy:
     self.equipment=equipment 
     self.description=description
 
-  def receive_attack(self, damage:int)->bool:
+  def attack(self):
+    return self.equipment.attack()
+
+class Mercenario(Enemy):
+  def __init__(self,name:str,life:int,equipment:Weapon,description:str)->None:
+    super().__init__('mercenario', 100, Adaga(), 'Este mercenário esta disposto a tudo para pilhar aqueles no seu caminho com sua adaga')
+
+  def receive_attack(self,damage:int)->bool:
     '''
     return True if this enemy is dead
     '''
@@ -43,10 +50,6 @@ class Enemy:
       return True
     else:
       return False
-
-  def attack(self):
-    return self.equipment.attack()
-
 
 def create_enemy(name:str)->Enemy:
   if name=='mercenario':
