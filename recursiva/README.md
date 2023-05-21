@@ -21,5 +21,7 @@ entre tags sub gera<sub> um texto assim</sub>
 <br>
 &copy+; gera o C comercial &copy;
 
+a tag br<br>gera uma quebra de linha
+
 crie um link colocando [o texto]+(link+"título")
 [YouTube](https://www.youtube.com"Youtube")
