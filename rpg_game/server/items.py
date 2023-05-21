@@ -29,17 +29,17 @@ class Espada_de_mao(Weapon):
 
 class Espadao(Weapon):
 	def __init__(self)->None:
-		super().__init__("Espadão", 210, 410)
+		super().__init__("espadão", 210, 410)
 
 
 class Arco_recurvo(Weapon):
 	def __init__(self)->None:
-		super().__init__("Arco Curvo", 250, 300)
+		super().__init__("arco recurvo", 250, 300)
 
 
 class Arco_longo(Weapon):
 	def __init__(self)->None:
-		super().__init__("Arco Longo", 280, 430)
+		super().__init__("arco longo", 280, 430)
 
 
 class Mosquete(Weapon):

@@ -1,6 +1,6 @@
 import socket
 IP='10.0.0.143'
-HOST=25555
+HOST=25554
 
 """
 * 0: criar personagem

@@ -28,7 +28,6 @@ def change_map(game_vars:dict,values:dict[str:any]):
 		print('você encontrou %s %s\ndescrição:%s'%(conector,game_vars['enemy']['name'],game_vars['enemy']['description']))
 	else:
 		print('Você não encontrou nada anormal aqui!')
-	print('\n')
 	return
 
 
@@ -40,7 +39,6 @@ try:
 			'description':''
 		},
 	}
-
 	server=create_conn(IP,HOST)
 	account=input('você possui conta? ')
 	if account in 'simSIMYESyes':
@@ -59,38 +57,42 @@ try:
 	sleep(0.05)
 	send(server,'["MI",""]')
 	server_return=json.loads(server.recv(2048))
-	print(server_return)
 	change_map(map_infos,server_return)
 	
-
 	while True:
 		data=input('qual ação deseja realizar? ')
+		print()
 		if map_infos['enemy']['achieved']==True:
 			if data=='ajuda':
-				print('atacar: ataca o inimigo que esta com você\ntrocar equipamento: permite que você troque de equipamento caso possua mais de 1')
+				print('atacar: ataca o inimigo que esta com você\ntrocar equipamento: permite que você troque de equipamento caso possua mais de 1\nstatus:mostra os status do jogador')
+
 			elif data=='atacar':
 				send(server,'["AT",""]')
 				infos=json.loads(json.loads(server.recv(1024)))
-				print(type(infos))
 				if infos[0]=='ED':
-					print('você causou %i de dano e o derrotou!'%(infos[1]))
+					print('você causou %i de dano no %s e o derrotou!'%(infos[1],map_infos['enemy']['name']))
 					map_infos['enemy']['achieved']=False
+
 				elif infos[0]=='CD':
 					if infos[1]==0:
-						print('você errou o ataque!!!')
-						print('o %s causou-lhe %i de dano e derrotou o jogador!')
+						print('você errou o ataque e o %s causou-lhe %i de dano, lhe derotando'%(map_infos['enemy']['name'],infos[2]))
 						print('você foi derrotado!!!!')
 						raise KeyboardInterrupt
+
 					else:
-						print('você causou %i de dano!!!'%infos[1])
-						print('o %s causou-lhe %i de dano e derrotou o jogador!')
+						print('você causou %i de dano no %s que causou %i de dano, lhe derrotando'%(infos[1],map_infos['enemy']['name'],infos[2]))
 						print('você foi derrotado!!!!')
 						raise KeyboardInterrupt
+
 				else:
-					if infos[2]!=0:
+					if infos[2]!=0 and infos[1]!=0:
 						print('você causou %i de dano no %s, que causou-lhe %i de dano!'%(infos[1],map_infos['enemy']['name'],infos[2]))
+					elif infos[2]!=0:
+						print('você errou o ataque no %s, que causou-lhe %i de dano!'%(map_infos['enemy']['name'],infos[2]))
+					elif infos[2]!=0 and infos[1]!=0:
+						print('você causou %i de dano no %s, que errou o ataque!'%(infos[1],map_infos['enemy']['name']))
 					else:
-						print('você causou %i de dano no %s que errou seu ataque')
+						print('ambos erraram seus ataques!')
 
 			elif data=='trocar equipamento':
 				send(server,'["GW",""]')
@@ -107,30 +109,64 @@ try:
 				else:
 					print('você apenas possui uma Adaga')
 
+			elif data=='status':
+				send(server,'["GS",""]')
+				status=json.loads(server.recv(1024))
+				print(status)
+
 			else:
 				print('valor de entrada incorreto!!!\n')
 		else:
 			if data=='ajuda':
-				print('trocar equipamento: permite que você troque de equipamento coso possua mais de 1.\nmovimentar: permite que você se movimente para qualquer lugar possivel no mapa',end='\n\n')
+				print('trocar equipamento: permite que você troque de equipamento coso possua mais de 1.\nmovimentar: permite que você se movimente para qualquer lugar possivel no mapa\nstatus:mostra os status do jogador',end='\n\n')
 				continue
+
 			elif data=='trocar equipamento':
 				send(server,'["GW",""]')
 				equipments=json.loads(server.recv(1024))
 				if len(equipments)!=1:
 					print('armas: ')
 					for i in equipments:
-						print(i, end='\n\t')
-					name:str
+						print('\t'+i)
+					name:str=''
+					print()
 					while name not in equipments:
 						name=input('qual arma deseja usar? ')
-					
+					send(server,'["UW", "%s"]'%name)
+
+				elif data=='status':
+					send(server,'["GS",""]')
+					status=json.loads(server.recv(1024))
+					print(status)
+
 				else:
 					print('você apenas possui uma Adaga')
+
 			elif data=='movimentar':
-				continue
+				send(server,'["MV",""]')
+				tempdata=server.recv(1024)
+				datas=json.loads(tempdata)
+				print('você pode ir para:')
+				for i in datas:
+					print('\t%s'%i)
+				local=''
+				while local not in datas:
+					local=input('qual lugar você deseja ir? ')
+				send(server,'["%s"]'%local)
+				sleep(0.005)
+				send(server,'["MI",""]')
+				server_return=json.loads(server.recv(2048))
+				change_map(map_infos,server_return)
+
+			elif data=='status':
+				send(server,'["GS",""]')
+				status=json.loads(server.recv(1024))
+				print(status)
 
 			else:
 				print('entrada inválida!!!\n')
+		print()
+
 except KeyboardInterrupt:
 	print('você está saindo do servidor')
 	server.close()
