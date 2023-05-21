@@ -1,6 +1,6 @@
-from socket import socket,AF_INET,SOCK_STREAM,create_connection
-IP='10.0.19.85'
-HOST=25554
+import socket
+IP='10.0.0.143'
+HOST=25555
 
 """
 * 0: criar personagem
@@ -10,12 +10,11 @@ HOST=25554
 """
 
 
-def create_server(ip:str,host:int)->socket:
-    local=(ip,host)
+def create_server(ip:str,host:int)->socket.socket:
 
-    server=socket(AF_INET,SOCK_STREAM)
-    server.bind(local)
-    server.listen(5)
+	server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	server.bind((ip,host))
+	server.listen(5)
 
-    print('server connected on %s:%d'%local)
-    return server
+	print('server connected on %s:%d'%(ip,host))
+	return server
