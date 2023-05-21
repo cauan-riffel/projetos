@@ -49,7 +49,7 @@ try:
 		while nickname not in nicknames:
 			print('nickname incorreto!!!')
 			nickname=input('qual seu nickname? ')
-		send(server,'["US","%s"]'%nickname)
+		send(server,'["UC","%s"]'%nickname)
 	else:
 		nickname=input('digite o nome do seu personagem: ')
 		send(server,'["CC","%s"]'%nickname)

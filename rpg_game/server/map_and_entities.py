@@ -45,7 +45,7 @@ class Game_map:
 		
 	def show_possibilities(self)->str:
 		temp
-		for i in self.move_possibilities:#
+		for i in self.move_possibilities:
 			temp+=f'\t{i}'+'\n'
 		return temp
 

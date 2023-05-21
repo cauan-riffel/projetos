@@ -66,25 +66,25 @@ def cliente(conn:socket.socket,client:tuple[int]):
 			except:
 				data:list=json.loads(data)
 		action,datas=data[0],data[1:]
-		if action=='GN':#?(funcionando)get names
+		if action=='GN':
 			names:list[str]=[]
 			for i in users:
 				names.append(i.name)
 			send(conn,names)
 
-		elif action=='CC':#?(funcionando)create character
+		elif action=='CC':
 			character=m_e_e.Character(datas[0],items.Adaga(),create_map('Wolf_cave'))
 			users.append(character)
 			characters[client[1]]=character
 			user_inventory[client[1]]=[character.used_equipment.name]
 
-		if action=='GW':#?(funcionando)get weapons
+		if action=='GW':
 			equips:list[str]=[]
 			for i in user_inventory[client[1]]:
 				equips.append(i)
 			send(conn,equips)
 
-		elif action=='US':#?(funcionando)use
+		elif action=='UC':
 			for i in users:
 				if i.name==datas[0]:
 					characters[client[1]]=i
@@ -97,11 +97,11 @@ def cliente(conn:socket.socket,client:tuple[int]):
 					if not saved:
 						user_inventory[client[1]]=[i.used_equipment]
 
-		elif action=='MI':#?(funcionando)map infos
+		elif action=='MI':
 			map_moves=get_map_infos(characters[client[1]].map,client[1])
 			send(conn,map_moves)
 
-		elif action=='AT':#?{funcionando}attack
+		elif action=='AT':
 			character=characters[client[1]]
 			enemy=character.map.enemy
 			enemy_damage:int
@@ -116,7 +116,7 @@ def cliente(conn:socket.socket,client:tuple[int]):
 				send(conn,'["ED",%i]'%character_damage)
 				character.life=character.MAX_LIFE
 
-		elif action=='MV':#move
+		elif action=='MV':
 			map_moves=characters[client[1]].map.move_possibilities
 			send(conn,list(map_moves))
 			try:
@@ -137,8 +137,7 @@ def cliente(conn:socket.socket,client:tuple[int]):
 			}
 			characters[client[1]].map=create_map(translate[local[0]])
 
-
-		elif action=='UW':#?{funcionando}use weapon
+		elif action=='UW':
 			references={
 				'adaga':items.Adaga,
 				'Arco recurvo':items.Arco_recurvo,
@@ -149,13 +148,8 @@ def cliente(conn:socket.socket,client:tuple[int]):
 			}
 			characters[client[1]].used_equipment=references[datas[0]]()
 
-		elif action=='GS':#?{funcionando}get status
+		elif action=='GS':
 			send(conn,characters[client[1]].show_status(user_inventory[client[1]]))
-
-"""
-* 3: mover-se pelo caminho
-* 4: atacar inimigo
-"""
 
 users:list[m_e_e.Character]=[
 	m_e_e.Character('Guest', items.Mosquete(), create_map('Wolf_cave'))
