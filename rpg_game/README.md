@@ -24,7 +24,6 @@ Este arquivo contém toda a comunicação do servidor, ele possui 4 funções pr
 
 Após a declaração das funções é criado o servidor e cria-se um loop while que sempre se repetirá, em que o servidor ficará esperando uma conexão para mostrar o HOST e IP do cliente e depois disso criar uma nova thread para este cliente
 
-(Ex.: Tipos de mensagens, configurações, dados extras, [...]);
 ### **cliente**
 ####  data.py
 Este é o arquivo que contém o IP e HOST do servidor, bem com uma função responsável por criar uma conexão com o servidor.
@@ -37,26 +36,26 @@ Este arquivo é o que realiza todas as comunicações por parte do cliente, poss
 
 # tipos de mensagem do servidor
 ### GN-get nicknames
-retorna para o cliente uma lista com o nome de todos os personagens criados no jogo
+Retorna para o cliente uma lista com o nome de todos os personagens criados no jogo.
 ### CC-create character
-cria e usa um personagem com o nome enviado pelo cliente
+Cria e usa um personagem com o nome enviado pelo cliente.
 ### GW-getWeapon
-retorna para o cliente uma lista com todos os equipamentos no inventário do personagem
+Retorna para o cliente uma lista com todos os equipamentos no inventário do personagem.
 ### UC-use character
-usa o personagem com o nome passado pelo cliente
+Usa o personagem com o nome passado pelo cliente.
 ### MI-map infos
-retorna para o cliente um dicionário contendo todas as informações do mapa que ele esta
+Retorna para o cliente um dicionário contendo todas as informações do mapa que ele esta.
 ### AT-attack
-ataca o inimigo que esta com o personagem e retorna para o cliente uma lista contendo:
-* ['ND',character damage, enemy damage](ND significa nobody died)
-* ['CD',character damage, enemy damage](CD significa Character died)
-* ['ED', chracter damage](ED significa Enemy died)
+Ataca o inimigo que esta com o personagem e retorna para o cliente uma lista contendo:
+* ['ND',character damage, enemy damage](ND significa nobody died).
+* ['CD',character damage, enemy damage](CD significa Character died).
+* ['ED', chracter damage](ED significa Enemy died).
 ### MV-move
-envia para o cliente todos os locais que o personagem pode se mover, após isso fica esperando o cliente enviar o nome do local, traduz-o para o inglês e cria um novo mapa usando a gunção create map
+Envia para o cliente todos os locais que o personagem pode se mover, após isso fica esperando o cliente enviar o nome do local, o traduz para o inglês e cria um novo mapa usando a função create map.
 ### UW-use Weapon
-faz o personagem utilizar o equipamento especificado pelo cliente
+Faz o personagem utilizar o equipamento especificado pelo cliente.
 ### GS-get status
-retorna para o cliente os status do personagem
+Retorna para o cliente os status do personagem.
 
 # Instalação
 ## server
@@ -65,33 +64,3 @@ Para o computador que conterá o servidor ele precisa baixar todos os arquivos c
 Para os clientes é necessário baixar os arquivos contidos na pasta client
 ## ateração necessária
 Tanto no servidor como no cliente é necessário alterar o host em ambos os arquivos data.py, o host deve ser o IP do servidor na rede
-
-
-
-este é um exemplo de readme.md
-
-escrever normalmente gera texto simples
-
-_underline gera um texto em itálico_
-
-**entre 2 asteríscos gera um texto em negrito**
-
-~~ente 2 tils gera um texto riscado~~
-
-# A quantidade de hastags define o tipo de título
-## O anterior era um h1, este é um h2
-### h3
-#### h4
-##### h5
-###### h6
-
->sinal de maior gera um tab
-
-entre tags sub gera<sub> um texto assim</sub>
-<br>
-&copy+; gera o C comercial &copy;
-
-crie um link colocando [o texto]+(link+"título")
-[YouTube](https://www.youtube.com"Youtube")
-
-
