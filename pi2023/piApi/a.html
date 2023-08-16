@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="http://127.1.0.0:12001/changeData" name="aaaaa" method="post">
+		<input type="text" name="test" id="test">
+		<button onclick="sub()" type="button">send</button>
+		<input type="text" name="mainContent" id="cc" hidden>
+	</form>
+
+	<script>
+			function gbId(id){
+				return document.getElementById(id);
+			}
+			function sub(){
+				const camps=['test'],
+					results={};
+				for(const value of camps){
+					if(gbId(value).value==''){
+						//showError();
+						return false;
+					}else{
+						results[value]=gbId(value).value;
+					}
+				}
+				let mainInput=gbId('cc');
+				mainInput.value=JSON.stringify({data:results})
+				document.aaaaa.submit();
+			}
+	</script>
+</body>
+</html>
