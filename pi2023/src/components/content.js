@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default class MainContent extends React.Component{
-	static DEFAULT_HEIGHT=500;
+	static DEFAULT_HEIGHT=600;
 	constructor(props){
 		super(props);
 		//'specials'
@@ -17,13 +17,11 @@ export default class MainContent extends React.Component{
 		this.height=props.height||MainContent.DEFAULT_HEIGHT;
 		this.color=props.color||'#dbc2cf';
 		this.margin=props.margin||55;
-
-
 	}
 
 	render(){
 		if(this.type=='centered'){
-			return(<MainCentered
+			if(screen.availWidth>888)return(<MainCentered
 				//contents
 				title={this.title}
 				subtitle={this.subTitle}
@@ -120,7 +118,7 @@ class MainLateral extends React.Component{
 		this.subTitle=props.subtitle;
 		this.img=props.img||'/darkNone.png';
 		//values
-		this.height=props.height||MainContent.DEFAULT_HEIGHT;
+		this.height=props.height;
 		this.color=props.color;
 		this.margin=props.margin;
 	}

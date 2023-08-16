@@ -1,0 +1,11 @@
+#navBar{
+	position: fixed;
+	width: 100%;
+}
+
+
+
+.in:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}

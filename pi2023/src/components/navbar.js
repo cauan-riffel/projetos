@@ -1,13 +1,42 @@
 import React from "react";
-import $ from 'jquery';
+import './nav.css';
 
-export default class Navbar extends React.Component {
+export default class NavBar extends React.Component{
 	constructor(props){
 		super(props);
-		this.itemNames=props.linkNames;
 		this.height=Number(props.height);
-		this.destiny=props.destiny;
 		this.margin=Number(props.margin);
+		this.itemNames=props.linkNames;
+		this.destiny=props.destiny;
+
+		//optional
+		this.color=props.color||'whitesmoke'
+	}
+	render(){
+		if(screen.availWidth>700){
+			return (
+				<DesktopNav
+					margin={this.margin}
+					height={this.height}
+					destiny={this.destiny}
+					linkNames={this.itemNames}
+					color={this.color}
+				/>);
+		}
+	}
+}
+
+
+class DesktopNav extends React.Component {
+	constructor(props){
+		super(props);
+		this.height=Number(props.height);
+		this.margin=Number(props.margin);
+
+		this.itemNames=props.linkNames;
+		this.destiny=props.destiny;
+
+		this.color=props.color;
 	}
 
 	getMargin(height,elementHeight){
@@ -19,22 +48,17 @@ export default class Navbar extends React.Component {
 	}
 
 	moveTo(destiny){ //! precisa implementar
-		if(typeof(Number(destiny))=='number'){
-			window.scrollTo({
-				top:destiny,
-				behavior:'smooth'
-			})
+		if(document.getElementById(destiny)==null){
+			window.scrollTo({top:destiny,behavior:'smooth'});
 		}else if(typeof(destiny)=='string'){
-			let top=$(`#${destiny}`).offset();
-			console.log(top);
-			window.scrollTo({top,,behavior:'smooth'});
+			let top=document.getElementById(destiny).offsetTop-document.getElementById('navBar').offsetHeight;
+			window.scrollTo({top,behavior:'smooth'});
 		}
 	}
 
 	render(){
 		const divStyle={
-			position:"fixed", width:"100%",
-			height:this.height, backgroundColor:'whitesmoke'
+			height:this.height, backgroundColor:this.color
 		}
 
 		const imgStyle={
@@ -54,13 +78,13 @@ export default class Navbar extends React.Component {
 			marginTop:this.getMargin(this.getPercent(0.3),this.getPercent(0.65))
 		}
 		const items=this.itemNames.map((content,index)=>(
-			<li key={index} onClick={this.moveTo(this.destiny[index])} style={listStyle}>{content}</li>
+			<li key={index} className="in" onClick={()=>this.moveTo(this.destiny[index]||0)} style={listStyle}>{content}</li>
 		))
 
 		return(
 			<>
-				<div style={divStyle}>
-					<img style={imgStyle} src="/logo.png" />
+				<div id="navBar" style={divStyle}>
+					<img className="in" onClick={()=>this.moveTo(0)} style={imgStyle} src="/logo.png" />
 					<nav style={navStyle}>{items}</nav>
 				</div>
 				<div style={{height:this.height}}></div>
