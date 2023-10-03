@@ -14,10 +14,10 @@ int* rI(int t,int b,int q=1,bool r=true){
 	while(c<q){
 		int v=dis(gen);
 		if(!r){
-			bool s=false;
+			bool s=true;
 			for(int i=0;i<q;i++){
 				if(arr[i]==v){
-					s=true;
+					s=false;
 				}
 			}
 			if(s){
